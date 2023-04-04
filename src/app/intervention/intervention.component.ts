@@ -7,11 +7,19 @@ import { Intervention } from '../intervention';
   styleUrls: ['./intervention.component.scss']
 })
 export class InterventionComponent implements OnInit {
+  @Input() lIntervention!: Intervention;
   uneIntervention!: Intervention; 
   idIntervention!: string;
   constructor() { }
 
   ngOnInit(): void {
+    this.idIntervention = this.route.
+    if (this.idIntervention===undefined) {
+      this.uneIntervention = this.lIntervention;  
+    }
+    else {
+      this.myCDservice.getCDById(+this.idcd).subscribe(cd => this.unCd = cd);
+    }
   }
 
 }

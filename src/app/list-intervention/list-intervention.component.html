@@ -1,5 +1,5 @@
 <div class="list">
     <ng-container *ngFor="let uneIntervention of listIntervention$ | async">
-        <app-intervention></app-intervention>
+        <app-intervention [lIntervention]="uneIntervention"></app-intervention>
     </ng-container>
 </div>

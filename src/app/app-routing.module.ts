@@ -8,7 +8,7 @@ import { NvInterventionComponent } from './nv-intervention/nv-intervention.compo
 
 const routes: Route[] = [
   { path: '', component: HomeComponent },
-  { path: 'Intervention/:id', component: InterventionComponent },
+  { path: 'Intervention/:numeroDeSerie', component: InterventionComponent },
   { path: 'catalogue', component: ListInterventionComponent},
   { path: 'createIntervention', component: NvInterventionComponent}
   

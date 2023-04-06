@@ -16,7 +16,7 @@ export class InterventionComponent implements OnInit {
   constructor(private myInterventionservice: InterventionsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.idIntervention = this.route.snapshot.params['id'];
+    this.idIntervention = this.route.snapshot.params['numeroDeSerie'];
     if (this.idIntervention===undefined) {
       this.uneIntervention = this.lIntervention;  
     }

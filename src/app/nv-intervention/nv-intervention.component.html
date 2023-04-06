@@ -1,0 +1,55 @@
+<div class="monForm">
+    <section class="subForm saisieForm">
+        <h2>Nouvelle Intervention</h2>
+        <form [formGroup]="formulaire">
+            <div class="form-group">
+                <label for="NomTechnicien">Nom du Technicien</label>
+                <input type="text" class="form-control" id="NomTechnicien" formControlName="NomTechnicien"/>
+            </div>
+            <div class="form-group">
+                <label for="NomClient">Nom du Client</label>
+                <input type="text" class="form-control" id="NomClient" formControlName="NomClient"/>
+            </div>
+            <div class="form-group">
+                <label for="adresseClient">Addresse du Client</label>
+                <input type="text" class="form-control" id="adresseClient" formControlName="adresseClient"/>
+            </div>
+            <div class="form-group">
+                <label for="marqueModeleC">Marque et Modele de la chaudiere</label>
+                <input type="text" class="form-control" id="marqueModeleC" formControlName="marqueModeleC"/>
+            </div>
+            <div class="form-group">
+                <label for="dateDIntervention">Effectué le</label>
+                <input type="text" class="form-control" id="dateDIntervention" formControlName="dateDIntervention"/>
+            </div>
+            <div class="form-group">
+                <label for="dateDeMiseEnService">Mise en service le</label>
+                <input type="text" class="form-control" id="dateDeMiseEnService" formControlName="dateDeMiseEnService"/>
+            </div>
+            <div class="form-group">
+                <label for="descriptionIntervention">Description</label>
+                <input type="text" class="form-control" id="descriptionIntervention" formControlName="descriptionIntervention"/>
+            </div>
+            <div class="form-group">
+                <label for="tempsPasseEnM">Temps passe en minute</label>
+                <input type="text" class="form-control" id="tempsPasseEnM" formControlName="tempsPasseEnM"/>
+            </div>                 
+
+            <button type="submit" class="button" (click)="addIntervention()">Confirmer l'Intervention</button>
+        </form>         
+    </section>
+    <section class="vueForm">
+        <h2>Previsualisation de l'Intervention</h2>
+        <div *ngIf="currentIntervention$ | async as uneIntervention">
+            <h3>Intervention :</h3>
+            <p>Nom du Technicien : {{uneIntervention.NomTechnicien}}</p>
+            <p>Nom du Client : {{uneIntervention.NomClient}}</p>
+            <p>Addresse du Client : {{uneIntervention.adresseClient}}</p>
+            <p>Marque et Modele de la chaudiere : {{uneIntervention.marqueModeleC}}</p>
+            <p>Effectué le : {{ uneIntervention.dateDIntervention }}</p>
+            <p>Mise en service le : {{ uneIntervention.dateDeMiseEnService}}</p>
+            <p>Description : {{uneIntervention.descriptionIntervention}}</p>
+            <p>Temps passe en minute : {{uneIntervention.tempsPasseEnM }}</p>
+        </div>
+    </section>
+</div>

@@ -1,5 +1,8 @@
 import { Component,Input, OnInit } from '@angular/core';
 import { Intervention } from '../intervention';
+import { InterventionsService } from '../interventions.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-intervention',
@@ -10,18 +13,20 @@ export class InterventionComponent implements OnInit {
   @Input() lIntervention!: Intervention;
   uneIntervention!: Intervention; 
   idIntervention!: string;
-  constructor() { }
+  constructor(private myInterventionservice: InterventionsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.idIntervention = this.route.
+    this.idIntervention = this.route.snapshot.params['id'];
     if (this.idIntervention===undefined) {
       this.uneIntervention = this.lIntervention;  
     }
     else {
-      this.myCDservice.getCDById(+this.idcd).subscribe(cd => this.unCd = cd);
+      this.myInterventionservice.getInterventionById(+this.idIntervention).subscribe(Intervention => this.uneIntervention = Intervention);
     }
   }
 
-}
+  
 
 }
+
+

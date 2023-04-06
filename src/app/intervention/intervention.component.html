@@ -1,1 +1,15 @@
-<p>intervention works!</p>
+<div class="inter">
+    <h3>Intervention :</h3>
+    <p>Nom du Technicien : {{uneIntervention.NomTechnicien}}</p>
+    <p>Nom du Client : {{uneIntervention.NomClient}}</p>
+    <p>Addresse du Client : {{uneIntervention.adresseClient}}</p>
+    <p>Marque et Modele de la chaudiere : {{uneIntervention.marqueModeleC}}</p>
+    <p>Effectué le : {{ uneIntervention.dateDIntervention | date: "dd/MM/yyyy" }}</p>
+    <p>Mise en service le : {{ uneIntervention.dateDeMiseEnService | date: "dd/MM/yyyy" }}</p>
+    <p>Description : {{uneIntervention.descriptionIntervention}}</p>
+    <p>Temps passe en minute : {{uneIntervention.tempsPasseEnM }}</p>
+    
+    <p *ngIf="idIntervention === undefined">
+        <a class="button" routerLink="/cd/{{uneIntervention.numeroDeSerie}}"><button>Voir le détail</button></a>
+    </p>
+</div>
